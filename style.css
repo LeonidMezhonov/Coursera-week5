@@ -3,27 +3,36 @@
     padding: 0;
 } 
 
+html {
+    margin: 18px;
+}
+
+body {
+    /* width: 984px; */
+}
+
 .container {
+    display: flex;
     background-color: #f6f5f3;
-    width: 1020px; 
-    height: 1650px;
+    width: 984px; 
+    height: 1614px;
     margin: auto;
     box-sizing: border-box;
     justify-content: center;
 }
 
-.logo {
+.container .logo {
+    background-image: url(./Иконки/Shape\ Logo.png);
     position: relative;
-    float: right;
+    width: 167px;
+    height: 130px;
+    right: -350px;
 }
 
-.over {
+.container .logo img {
     position: absolute;
-    z-index: 100;
+    margin: 25px 0 0 35px;
 }
 
-.under {
-    position: relative;
-    z-index: 99;
-}
+
 
