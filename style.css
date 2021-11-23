@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+} 
+
+.container {
+    background-color: #f6f5f3;
+    width: 1020px; 
+    height: 1650px;
+    margin: auto;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.logo {
+    position: relative;
+    float: right;
+}
+
+.over {
+    position: absolute;
+    z-index: 100;
+}
+
+.under {
+    position: relative;
+    z-index: 99;
+}
+
