@@ -1,38 +1,217 @@
 * {
     margin: 0;
     padding: 0;
-} 
+}
 
 html {
     margin: 18px;
-}
-
-body {
-    /* width: 984px; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-    display: flex;
     background-color: #f6f5f3;
     width: 984px; 
     height: 1614px;
     margin: auto;
-    box-sizing: border-box;
-    justify-content: center;
-}
+    display: grid;
+    grid-template-columns: 984px;
+    grid-template-rows: 155px 1fr 476px 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Logo"
+      "Photo-auto-text"
+      "Video"
+      "Icons"
+      "text3-button";
+  }
+  
+  .Logo { grid-area: Logo; }
+  
+  .Photo-auto-text { 
+    display: grid;
+    grid-template-columns: 164.5px 655px 164.5px;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "left-arrow text1 right-arrow";
+    grid-area: Photo-auto-text; }
+   
+   .right-arrow { grid-area: right-arrow;}
+   
+   .text1 {grid-area: text1;}
 
-.container .logo {
+   .left-arrow {grid-area: left-arrow;}
+  
+  .Video { grid-area: Video; }
+  
+  
+  
+  .Icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "text-2 text-2 text-2 text-2"  
+      "katalog Poisk Vybor-auto Simple-language"
+      "katalog Poisk Vybor-auto Simple-language"
+      "katalog Poisk Vybor-auto Simple-language"
+      "katalog Poisk Vybor-auto Simple-language";
+    grid-area: Icons;
+  }
+
+  .text-2 { grid-area: text-2; }
+
+  .katalog { grid-area: katalog; }
+  
+  .Poisk { grid-area: Poisk; }
+  
+  .Vybor-auto { grid-area: Vybor-auto; }
+  
+  .Simple-language { grid-area: Simple-language; }
+  
+  .text3-button { grid-area: text3-button; }
+  
+
+/* Логотип */
+
+  .Logo {
     background-image: url(./Иконки/Shape\ Logo.png);
     position: relative;
     width: 167px;
     height: 130px;
-    right: -350px;
-}
+    left: 744px;
+  }
 
-.container .logo img {
+  .container .Logo img {
     position: absolute;
-    margin: 25px 0 0 35px;
+    margin: 26px 0 0 35px;
+} 
+
+/* Текст и фото под ним */
+
+q {
+    quotes: "«" "»";
 }
 
+.container .Photo-auto-text {
+    position: relative;
+}
 
+.container .Photo-auto-text p {
+    font-size: 36px;
+    height: 208px;
+}
 
+.container .Photo-auto-text img {
+    position: relative;
+    left: 13px;
+}
+
+/* стрелки */
+
+.left-arrow {
+    width: 58px;
+    height: 58px;
+    border: 1px solid #ffdb4a;
+    background-color: #ffdb4a;
+    border-radius: 50px;
+    position: relative;
+    left: 72px;
+    top: 140px;
+    box-shadow: 2px 1px #fc965d;
+}
+
+.left-arrow img {
+    margin-left: 6px;
+    top: 19px;
+} 
+
+.right-arrow {
+    width: 58px;
+    height: 58px;
+    border: 1px solid #ffdb4a;
+    background-color: #ffdb4a;
+    border-radius: 50px;
+    position: relative;
+    left: 31px;
+    top: 140px;
+    box-shadow: 2px 1px #fc965d;
+} 
+
+.right-arrow img {
+    margin-left: 10px;
+    top: 16px;
+} 
+
+/* видео */ 
+
+.container .Video {
+    position: relative;
+    margin: auto;
+    width: 641px;
+    top: 52px;
+}
+
+.container .Video .play_button {
+    position: relative;
+    height: 361px;
+} 
+
+.container .Video .play_button .img_wrap {
+    width: 121px;
+    height: 121px;
+    border: 1px solid #ffdb4a;
+    background-color: #ffdb4a;
+    border-radius: 60px;
+    position: relative;
+    left: 258px;
+    bottom: 323px;
+    box-shadow: 2px 1px #fc965d;
+}
+
+.container .Video .play_button img {
+    position: relative;
+    left: 44px;
+    top: 32px; 
+}
+
+.container .Video .text_background {
+    background-color: rgba(80, 80, 80, .7);
+    width: 641px;
+    height: 48px;
+    position: relative;
+    bottom: 365px;
+}
+
+.container .Video p {
+    position: relative;
+    text-align: center;
+    font-size: 29.2px;
+    color: white;
+    bottom: 406px;
+    left: 7px;
+} 
+
+/* Иконки */ 
+
+.container .Icons {
+    margin: auto;
+}
+
+.container .Icons .text-2 .heading {
+    font-size: 47px;
+    text-align: center;
+} 
+
+.container .Icons h1 {
+    font-weight: normal; 
+    font-size: 30px;
+} 
+
+.container .Icons p {
+    font-size: 16px;
+}
