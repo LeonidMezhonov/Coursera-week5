@@ -8,6 +8,8 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Разметка */
+
 .container {
     background-color: #f6f5f3;
     width: 984px; 
@@ -15,7 +17,7 @@ html {
     margin: auto;
     display: grid;
     grid-template-columns: 984px;
-    grid-template-rows: 155px 1fr 476px 1fr 1fr;
+    grid-template-rows: 155px 1fr 476px 308px 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -30,9 +32,9 @@ html {
   
   .Photo-auto-text { 
     display: grid;
-    grid-template-columns: 164.5px 655px 164.5px;
+    grid-template-columns: 154.5px 655px 154.5px;
     grid-template-rows: 1fr;
-    gap: 0px 0px;
+    gap: 0px 10px;
     grid-auto-flow: row;
     grid-template-areas:
       "left-arrow text1 right-arrow";
@@ -50,28 +52,43 @@ html {
   
   .Icons {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 226px 226px 226px 226px;
+    grid-template-rows: 94px 88px 50px 173px;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "text-2 text-2 text-2 text-2"  
       "katalog Poisk Vybor-auto Simple-language"
-      "katalog Poisk Vybor-auto Simple-language"
-      "katalog Poisk Vybor-auto Simple-language"
-      "katalog Poisk Vybor-auto Simple-language";
+      "katalog1 Poisk1 Vybor-auto1 Simple-language1"
+      "katalog2 Poisk2 Vybor-auto2 Simple-language2";
     grid-area: Icons;
   }
 
   .text-2 { grid-area: text-2; }
 
   .katalog { grid-area: katalog; }
+
+  .katalog1 { grid-area: katalog1; }
+
+  .katalog2 { grid-area: katalog2; }
   
   .Poisk { grid-area: Poisk; }
+
+  .Poisk1 { grid-area: Poisk1; } 
+
+  .Poisk2 { grid-area: Poisk2; }
   
   .Vybor-auto { grid-area: Vybor-auto; }
+
+  .Vybor-auto1 { grid-area: Vybor-auto1; }
+
+  .Vybor-auto2 { grid-area: Vybor-auto2; }
   
   .Simple-language { grid-area: Simple-language; }
+
+  .Simple-language1 { grid-area: Simple-language1; }
+
+  .Simple-language2 { grid-area: Simple-language2; }
   
   .text3-button { grid-area: text3-button; }
   
@@ -114,38 +131,54 @@ q {
 /* стрелки */
 
 .left-arrow {
+    display: flex;
+    align-items: center;
     width: 58px;
     height: 58px;
     border: 1px solid #ffdb4a;
     background-color: #ffdb4a;
     border-radius: 50px;
     position: relative;
-    left: 72px;
-    top: 140px;
     box-shadow: 2px 1px #fc965d;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: 4px 0 0 18px;
 }
 
 .left-arrow img {
+    position: relative;
     margin-left: 6px;
-    top: 19px;
 } 
 
 .right-arrow {
+    display: flex;
+    align-items: center;
     width: 58px;
     height: 58px;
     border: 1px solid #ffdb4a;
     background-color: #ffdb4a;
     border-radius: 50px;
     position: relative;
-    left: 31px;
-    top: 140px;
     box-shadow: 2px 1px #fc965d;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: 4px 0 0 -18px;
 } 
 
 .right-arrow img {
+    position: relative;
     margin-left: 10px;
-    top: 16px;
 } 
+
+.left-arrow:hover {
+    opacity: 0.8;
+}
+
+.right-arrow:hover {
+    opacity: 0.8;
+}
 
 /* видео */ 
 
@@ -171,6 +204,10 @@ q {
     left: 258px;
     bottom: 323px;
     box-shadow: 2px 1px #fc965d;
+}
+
+.container .Video .play_button .img_wrap:hover {
+    opacity: 0.8;
 }
 
 .container .Video .play_button img {
@@ -203,15 +240,109 @@ q {
 }
 
 .container .Icons .text-2 .heading {
-    font-size: 47px;
+    width: 908px;
+    font-size: 47.6px;
     text-align: center;
+    position: relative;
+    left: 2px;
 } 
 
 .container .Icons h1 {
+    width: 220px;
     font-weight: normal; 
     font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 } 
 
 .container .Icons p {
-    font-size: 16px;
+    width: 200px;
+    font-size: 16.1px;
+} 
+
+.katalog {
+    position: relative;
+    left: 4px;
+}
+
+.Poisk {
+    position: relative;
+    left: 15px;
+    bottom: 4px;
+}
+
+.Poisk1 {
+    position: relative;
+    left: 15px;
+}
+
+.Poisk2 {
+    position: relative;
+    left: 16px;
+    top: 1px;
+}
+
+.Vybor-auto {
+    position: relative;
+    left: 23px;
+} 
+
+.Vybor-auto1 {
+    position: relative;
+    left: 29px;
+    bottom: 1px;
+} 
+
+.Vybor-auto2 {
+    position: relative;
+    left: 29px;
+} 
+
+.Simple-language {
+    position: relative;
+    left: 44px;
+    top: 6px;
+} 
+
+.Simple-language1 {
+    position: relative;
+    left: 43px;
+    bottom: 1px;
+}
+
+.Simple-language2 {
+    position: relative;
+    left: 45px;
+    top: 1px;
+} 
+
+/* Последний блок с кнопкой */
+
+.container .text3-button {
+    margin: 88px 141px 0 191px;
+} 
+
+.container .text3-button p {
+    text-align: center;
+    font-size: 42.3px;
+} 
+
+.container .text3-button button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 61px 0 0 143px;
+    text-align: center;
+    font-size: 36px;
+    width: 315px;
+    height: 72px;
+    background-image: linear-gradient(#ffdb04, #ffe346);
+    border: none;
+    border-radius: 8px;
+} 
+
+.container .text3-button button:hover {
+    background-image: linear-gradient(#ffe133, #ffe867);
 }
